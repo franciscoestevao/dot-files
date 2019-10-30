@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+alias adsearch='kinit; ldapsearch -Y GSSAPI -LLLh us01vwaddc1.internal.synopsys.com -o ldif-wrap=no -b dc=internal,dc=synopsys,dc=com'
+alias getDate='date -u +%Y%m%d_%H%M%S'
+alias gitlog='git log --all --decorate --oneline --graph'
+alias cgrep='grep -n --color=always'
+alias h='history'
+alias la='ls -la --group-directories-first --time-style=+"%Y-%m-%d %H:%M:%S" --color=always -F -h'
+alias ll='ls -l --group-directories-first --time-style=+"%Y-%m-%d %H:%M:%S" --color=always -F -h'
+alias ls='ls --color=always'
+alias tarcompact='tar -zcvf'
+alias taruncompact='tar -zxvf'
+alias un64='awk '\''BEGIN{FS=":: ";c="base64 -d"}{if(/\w+:: /) {print $2 |& c; close(c,"to"); c |& getline $2; close(c); printf("%s:: \"%s\"\n", $1, $2); next} print $0 }'\'''
+alias vi='vim'
