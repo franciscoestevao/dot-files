@@ -42,7 +42,7 @@ set expandtab
 set autoindent
 "set smartindent
 
-set mouse=a
+" set mouse=a
 
 " turn off autoindent when pasting
 set pastetoggle=<F3>
@@ -100,11 +100,13 @@ Plug 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 " map Ctrl+N to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
-" open a NERDTree automatically when vim starts up
+" start NERDTree automatically when vim starts up
 autocmd vimenter * NERDTree
+" Go to previous (last accessed) window (main file)
+autocmd VimEnter * wincmd p
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+" Auto-open NERDTree in every tab
 autocmd BufWinEnter * NERDTreeMirror
 
 
