@@ -1,0 +1,39 @@
+# Ideas from https://gist.github.com/tdd/470582
+[user]
+    name = Francisco Estevao
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[core]
+    # Don't track file mode changes
+    fileMode = false
+[alias]
+    # List available aliases
+    aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+    # Command shortcuts
+    ci = commit
+    co = checkout
+    st = status
+    # Display tree-like log
+    lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+[diff]
+    # Use better, descriptive initials (c, i, w) instead of a/b.
+    mnemonicPrefix = true
+    # Show renames/moves as such
+    renames = true
+    # When using --word-diff, assume --word-diff-regex=.
+    wordRegex = .
+    # Display submodule-related information (commit listings)
+    submodule = log
+[log]
+    # Use abbrev SHAs whenever possible/relevant instead of full 40 chars
+    abbrevCommit = true
+[status]
+    # Display submodule rev change summaries in status
+    submoduleSummary = true
+    # Recursively traverse untracked directories to display all contents
+    showUntrackedFiles = all
